@@ -1,0 +1,15 @@
+.spinner{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(149, 144, 146, 0.53);
+    width: 100%;
+    height: 100%;
+}
+
+.spinner mat-spinner {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

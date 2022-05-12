@@ -1,0 +1,51 @@
+
+
+
+
+<app-spinner *ngIf="!loaded"></app-spinner>
+<mat-tab-group mat-stretch-tabs *ngIf="show">
+    <div  *ngFor="let selector of arrTipos" class="col-md-4" >
+        <mat-tab label="{{selector.descripcion}}">
+
+            
+                <div class="container" >
+                    <div class="row justify-content-around" >
+                        <ng-container   *ngFor="let item of arr"  >
+
+                            <div class="card col-md-3 m-3" *ngIf="selector.id===item.tipoCard.id">
+                                <span style="display: flex; justify-content: space-between; padding-bottom: 8px;">
+                                    <h3>{{item?.titulo || '&nbsp;'}}</h3>
+                                    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" *ngIf="!!loggedIn" (click)="editar(item)">
+                                        <mat-icon>edit</mat-icon>
+                                    </button>
+                                    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" *ngIf="!!loggedIn" (click)="eliminar(item.id)">
+                                        <mat-icon>delete</mat-icon>
+                                    </button>
+                                </span>
+                                <br>
+                                <img src="{{item?.imageSource}}" alt="" *ngIf="!!item?.imageSource" >
+                                <br>
+                                <p>{{item?.descripcion || '&nbsp;'}}</p>
+                            </div>
+
+                        </ng-container>
+                    </div>
+                </div>
+            
+
+        </mat-tab>
+    </div>
+  </mat-tab-group>
+
+
+
+
+      
+    
+    
+    
+    
+    
+ 
+  
+  

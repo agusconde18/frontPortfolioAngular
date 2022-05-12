@@ -1,0 +1,19 @@
+<app-spinner *ngIf="!loaded"></app-spinner>
+<div class="container">
+    <mat-card class="card_login " style="padding:  20px;">
+        <mat-card-title>Inicio de Sesion</mat-card-title>
+        <form  class="container">        
+            <mat-form-field class="box_input" appearance="fill">
+                <mat-label>e-mail</mat-label>
+                <input matInput placeholder="pedro@mail.com" type="email" [(ngModel)]="form.email" name="email" >
+            </mat-form-field>
+
+            <mat-form-field class="box_input" appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input matInput placeholder="***********" type="password" [(ngModel)]="form.password" name="pass">
+            </mat-form-field>
+            <button type='button' style="align-self: flex-end; " mat-raised-button color="primary" (click)="iniciarSesion()">Iniciar Sesion</button>
+        </form>
+    </mat-card>
+</div>
+  

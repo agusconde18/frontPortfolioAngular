@@ -1,0 +1,32 @@
+footer{
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:50px;
+    width:100%; 
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    z-index: 2;
+}
+
+ul{
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    list-style-type: none;
+}
+
+.flex-item {
+    margin-block: 10px;
+}
+
+li img{
+    position: fixed;
+
+    height: 30px;
+    transition: 0.3s;
+}
+
+li img:hover{
+    transform: scale(2,2);
+}

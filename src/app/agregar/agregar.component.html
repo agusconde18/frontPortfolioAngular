@@ -1,0 +1,53 @@
+
+<app-spinner *ngIf="!loaded"></app-spinner>
+<div class="container">
+    <form style="display: flexbox;">
+        
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Titulo de la card</mat-label>
+          <input matInput placeholder="Ingeniero en Sistemas"  [(ngModel)]="form.titulo" name="titulo">
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Descripcion de la card</mat-label>
+          <textarea matInput placeholder="Realice esto porque me hace feliz..." [(ngModel)]="form.descripcion" name="descripcion"></textarea>
+        </mat-form-field>
+
+        <hr>
+        <mat-radio-group
+          *ngIf="viewRadio"
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          [(ngModel)]="radioSelector"
+          style="display: flex; flex-direction: column;"
+          name="favs">
+          <mat-radio-button class="example-radio-button" *ngFor="let varr of arrTipos" [value]="varr.descripcion">
+            {{varr.descripcion}}
+          </mat-radio-button>    
+          <mat-radio-button class="example-radio-button"  value="nuevaCategoria554" name="otross">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Nueva Categoria</mat-label>
+              <input matInput placeholder="Ingrese nombre nueva categoria" [(ngModel)]="otroSelector" name="otroSelector">
+            </mat-form-field>
+          </mat-radio-button>
+        </mat-radio-group>
+        <hr>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Url de imagen</mat-label>
+          <input matInput placeholder="Ingrese url de imagen" [(ngModel)]="form.src" name="src">
+        </mat-form-field>
+
+        <div *ngIf="(form.src?.length ?? 0) >7">
+          <h3>Vista previa de imagen:</h3>
+          <img src="{{form.src}}" alt="La url de la imagen no puede ser cargada." style="margin-bottom : 15px">
+        </div>
+        
+        <hr>
+        
+        <button type='button' mat-raised-button color="primary" (click)="enviarInfo()">{{textoBoton}}</button>
+   
+
+    </form>
+
+</div>

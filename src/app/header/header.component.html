@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 30px; box-shadow: 0px 0px 10px #000; width: 100%;">
+
+    <a class="navbar-brand" routerLink="/"><img src="/assets/img/s63tj5bn.bmp" alt="Perfil" class="profileImg"> Agustin A. Conde</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" *ngIf="loggedIn"  [ngClass]="{'active': ruta.url==='/'}">
+                <a class="nav-link" routerLink="/" >Inicio</a>
+            </li>
+            <li class="nav-item" *ngIf="loggedIn"  [ngClass]="{'active': ruta.url==='/agregar'}">
+                <a class="nav-link" routerLink="/agregar/false" >Agregar card</a>
+            </li>
+        </ul>
+    </div>
+
+    <span class="navbar-text" >
+        <a class="nav-link" routerLink="/login" *ngIf="!loggedIn">Login</a>
+        <a class="nav-link" routerLink="/" *ngIf="loggedIn" (click)="cerrarSesion()" >Cerrar Sesion</a>
+    </span>
+  </nav>
+
